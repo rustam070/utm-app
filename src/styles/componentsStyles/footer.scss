@@ -1,0 +1,14 @@
+@import '../commonStyles/variables';
+
+.footer__texts {
+  text-align: center;
+
+  & h3 {
+    font-size: 28px;
+    margin: 50px 0 10px;
+  }
+
+  & p {
+    font-size: $font-size-title;
+  }
+}

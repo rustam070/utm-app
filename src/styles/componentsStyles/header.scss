@@ -1,0 +1,16 @@
+@import '../commonStyles/variables';
+
+.header__texts {
+  text-align: center;
+
+  & h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  & h2 {
+    font-size: $font-size-title;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+}

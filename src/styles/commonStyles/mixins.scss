@@ -1,0 +1,30 @@
+@mixin background-content-style {
+  background: #fff;
+  width: 80%;
+  margin: 0 auto 10px;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+}
+
+@mixin d-flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin d-flex-center-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin d-flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin d-flex-center {
+  display: flex;
+  align-items: center;
+}

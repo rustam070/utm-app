@@ -1,0 +1,17 @@
+@import '../commonStyles/variables';
+@import '../commonStyles/mixins';
+
+.description__texts {
+  @include background-content-style;
+
+  & h3 {
+    font-size: $font-size-title;
+    font-weight: 500;
+  }
+}
+
+.description__list {
+  & li {
+    margin-top: 20px;
+  }
+}

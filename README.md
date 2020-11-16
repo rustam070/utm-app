@@ -1,70 +1,59 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### В данном репозитории представлен небольшой сервис (далее - приложение) для удобного формирования UTM-меток.
 
-## Available Scripts
+##### Для чего нужны UTM-метки? 
+UTM-метки помогают получить владельцам бизнеса и маркетологам подробную информацию о каждом источнике трафика. Например, определить, какие участки рекламной кампании приносят наименьшее количество прибыли. Это поможет оперативно реагировать на изменения на сайте и перераспределять рекламный бюджет.
 
-In the project directory, you can run:
+***
 
-### `npm start`
+##### Приложение создано с помощью:
+* Язык программирования - JavaScript;
+*  Библиотека/Фреймворк - React;
+*  State-менеджер - Redux;
+*  Оформление стилей - Sass.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+***
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+##### Установка и запуск приложения
+Для работы с кодовой базой приложения был использован готовый инструмент create react app.   
+Установить и запустить приложение можно следующими действиями:
 
-### `npm test`
+В вашей командной строке:
+> клонировать репозиторий  
+```git clone https://github.com/rustam070/testrepo.git```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> перейти в папку проекта  
+```cd utm-app```
+  
+> установка зависимостей  
+```npm install```
 
-### `npm run build`
+> запуск приложения  
+ ```npm start```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> сборка (опционально)   
+```npm run build```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+***
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Содержание приложения:
+* Входной файл приложения - index.js;
+*  Компонент-контейнер в котором представлены все секции страницы приложения - App.js;
+*  В папке components находятся компоненты, отвечающие за UI приложения;
+*  Стейт и вся логика изолирована в файле reducer.js, находящаяся в папке redux;
+*  Стили компонентов находятся в папке styles .
 
-### `npm run eject`
+***
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### Пример использования:
+В секции “Адрес вашей страницы” пользователь может добавить наименование сайта, а также выбрать протокол между http и https.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+В поле “Источник трафика” пользователь может выбрать предложенные источники трафика или же указать свои значения. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+При выборе предложенных источников трафика пользователю будет предложены рекомендуемые параметры utm-меток, которые пользователь может кастомизировать под нужды своей рекламной кампании.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Результатом в блоке сайта с одноименным названием является ссылка, которая будет автоматически сформирована в соответствии с указанными пользователем параметрами. Для того, чтобы скопировать ссылку в буфер обмена пользователь может нажать на кнопку “Копировать”.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Примечание:  
+_На данный момент приложение не оптимизировано под мобильные устройства. Для удобного пользования приложением используйте устройства в разрешением экрана более 650px._

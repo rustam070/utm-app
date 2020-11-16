@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.5rem;
+  color: #313131;
+}
+
+li {
+  list-style: none;
+}
+
+::placeholder {
+  color: #ABADA9;
+}

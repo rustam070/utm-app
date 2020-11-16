@@ -1,0 +1,31 @@
+@import '../commonStyles/variables';
+@import '../commonStyles/mixins';
+
+.utm__generator_block {
+  @include background-content-style;
+
+  & h3 {
+    font-size: $font-size-title;
+    font-weight: 500;
+  }
+}
+
+.utm__generator_site_link {
+  @include d-flex-center-center;
+  margin-top: 20px;
+}
+
+.utm__generator_radio {
+  & h3 {
+    margin-top: 30px;
+  }
+}
+
+.utm__generator_traffic_source {
+  display: flex;
+}
+
+.utm__generator_traffic_source_input {
+  @include d-flex-center-center;
+  margin: 10px 20px 0 0;
+}

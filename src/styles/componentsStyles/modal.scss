@@ -1,0 +1,66 @@
+@import '../commonStyles/mixins';
+
+.modal__backdrop {
+  @include d-flex-center-center;
+  background: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.modal {
+  background: #fff;
+  width: 700px;
+  padding: 30px 0 50px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.modal__close_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal__title {
+  display: flex;
+  padding: 30px 40px 0;
+
+  & h3 {
+    font-size: 20px;
+  }
+
+  & p {
+    font-size: 20px;
+  }
+}
+
+.modal__description {
+  @include d-flex-center;
+  padding: 20px 40px;
+
+  & span {
+    font-weight: 500;
+  }
+
+  & p {
+    margin-left: 5px;
+  }
+}
+
+.modal__example {
+  padding: 0 40px;
+
+  & p {
+    font-weight: 500;
+  }
+}
+
+.modal__list {
+  & li {
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,23 @@
+@import '../commonStyles/variables';
+
+.input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #ccc;
+  border-left: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 0 5px 5px 0;
+  padding-left: 7px;
+  color: $grey-color;
+  cursor: text;
+
+  &:focus {
+    border: 1px solid $orange-color;
+    border-left: none;
+  }
+}
+
+.label {
+  padding-left: 10px;
+}
