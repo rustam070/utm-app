@@ -20,7 +20,7 @@ UTM-метки помогают получить владельцам бизне
 
 В вашей командной строке:
 > клонировать репозиторий  
-```git clone https://github.com/rustam070/testrepo.git```
+```git clone https://github.com/rustam070/utm-app.git```
 
 > перейти в папку проекта  
 ```cd utm-app```
