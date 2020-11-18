@@ -15,7 +15,7 @@ import '../styles/componentsStyles/utm-generator-options.scss';
 export const UtmGeneratorOptions = () => {
   const dispatch = useDispatch();
 
-  const {requiredOptions, optionalOptions, modalContent, showModal} = useSelector(state => state);
+  const {requiredOptions, optionalOptions, modalContent, showModal, requiredModalText, optionalModalText} = useSelector(state => state);
 
   const onChangeInputRequiredOptions = (id, event) => {
     const {value} = event.target;
@@ -53,7 +53,7 @@ export const UtmGeneratorOptions = () => {
           <h3>
             Обязательные параметры
           </h3>
-          {requiredOptions.data.map(option => {
+          {requiredOptions.map(option => {
             const {id, name, utmName, placeholder, description, value} = option;
 
             return (
@@ -65,7 +65,7 @@ export const UtmGeneratorOptions = () => {
                 description={description}
                 value={value}
                 onChangeInput={event => onChangeInputRequiredOptions(id, event)}
-                showModalHandler={() => showModalHandler(true, requiredOptions.options, id)}
+                showModalHandler={() => showModalHandler(true, requiredModalText, id)}
                 showModal={showModal}
               />
             );
@@ -75,7 +75,7 @@ export const UtmGeneratorOptions = () => {
           <h3>
             Необязательные параметры
           </h3>
-          {optionalOptions.data.map(option => {
+          {optionalOptions.map(option => {
             const {id, name, utmName, placeholder, description, value} = option;
 
             return (
@@ -87,7 +87,7 @@ export const UtmGeneratorOptions = () => {
                 description={description}
                 value={value}
                 onChangeInput={event => onChangeInputOptionalOptions(id, event)}
-                showModalHandler={() => showModalHandler(true, optionalOptions.options, id)}
+                showModalHandler={() => showModalHandler(true, optionalModalText, id)}
               />
             );
           })}

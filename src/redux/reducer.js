@@ -60,157 +60,50 @@ const initialState = {
       checked: false
     },
   ],
-  requiredOptions: {
-    options: 'required',
-    data: [
-      {
-        id: 1,
-        name: 'Источник кампании',
-        utmName: 'utm_source',
-        placeholder: 'google, yandex, vk, facebook',
-        description: '',
-        value: '',
-        modalText: {
-          title: 'utm_source',
-          titleText: 'название рекламной площадки',
-          description: 'Нужен, чтобы указать название источника трафика',
-          examples: {
-            title: 'Примеры:',
-            texts: [
-              {
-                id: 1,
-                text: 'utm_source=google – контекстная реклама в Google Adwords',
-              },
-              {
-                id: 2,
-                text: 'utm_source=yandex — контекстная реклама в Яндекс.Директ',
-              },
-              {
-                id: 3,
-                text: 'utm_source=facebook — контекстная реклама в Facebook',
-              },
-              {
-                id: 4,
-                text: 'utm_source=vk — контекстная реклама в Вконтакте',
-              }
-            ]
-          }
-        }
-      },
-      {
-        id: 2,
-        name: 'Тип трафика',
-        utmName: 'utm_medium',
-        placeholder: 'cpc, email, banner, article',
-        description: '',
-        value: '',
-        modalText: {
-          title: 'utm_medium',
-          titleText: 'тип рекламы',
-          description: 'Чтобы определить типа кампании или рекламы',
-          examples: {
-            title: 'Примеры',
-            texts: [
-              {
-                id: 1,
-                text: 'utm_medium=organic – бесплатный переход',
-              },
-              {
-                id: 2,
-                text: 'utm_medium=cpc – контекстная реклама (cost per click, плата за клик)',
-              },
-              {
-                id: 3,
-                text: 'utm_medium=email — рассылка',
-              },
-              {
-                id: 4,
-                text: 'utm_medium=social — социальные сети',
-              },
-              {
-                id: 5,
-                text: 'utm_medium=banner — медийная реклама',
-              },
-              {
-                id: 6,
-                text: 'utm_medium=cpa — другая реклама (cost per action, плата за действие)',
-              }
-            ]
-          }
-        }
-      },
-      {
-        id: 3,
-        name: 'Название кампании',
-        utmName: 'utm_campaign',
-        placeholder: 'promo, discount, sale',
-        description: '',
-        value: '',
-        modalText: {
-          title: 'utm_campaign',
-          titleText: 'название кампании',
-          description: 'Позволит вам отличить одну рекламную кампанию от другой в статистике',
-          examples: {
-            title: 'Примеры',
-            texts: [
-              {
-                id: 1,
-                text: 'utm_campaign=mebel_dlya_doma – рекламная кампания мебели для дома',
-              }
-            ]
-          }
-        }
-      },
-    ],
-  },
-  optionalOptions: {
-    options: 'optional',
-    data: [
-      {
-        id: 1,
-        name: 'Идентификатор объявления',
-        utmName: 'utm_content',
-        placeholder: 'link, landing page',
-        description: '',
-        value: '',
-        modalText: {
-          title: 'utm_content',
-          titleText: 'дополнительная информация, которую можно отслеживать, если совпадают другие параметры',
-          description: 'Часто используется как пометка для объявления внутри рекламной кампании. Название можно задать произвольно, удобнее всего использовать важные характеристики объявления — подкатегория товара или услуги, тип самого объявления и т. п.',
-          examples: {
-            title: 'Примеры',
-            texts: [
-              {
-                id: 1,
-                text: 'utm_content=zero_block240×60 — баннер 240 на 60 про Zero блок на Тильде',
-              },
-              {
-                id: 2,
-                text: 'utm_content=zero_block_text — текстовое объявление про Zero блок',
-              }
-            ]
-          }
-        }
-      },
-      {
-        id: 2,
-        name: 'Ключевое слово',
-        utmName: 'utm_term',
-        placeholder: 'free, -30%, registration',
-        description: '',
-        value: '',
-        modalText: {
-          title: 'utm_term',
-          titleText: 'ключевое слово, с которого начался показ объявления',
-          description: 'Позволит вам отличить одну рекламную кампанию от другой в статистике',
-          examples: {
-            title: 'Примеры',
-            texts: []
-          }
-        }
-      }
-    ]
-  },
+  requiredOptions: [
+    {
+      id: 1,
+      name: 'Источник кампании',
+      utmName: 'utm_source',
+      placeholder: 'google, yandex, vk, facebook',
+      description: '',
+      value: ''
+    },
+    {
+      id: 2,
+      name: 'Тип трафика',
+      utmName: 'utm_medium',
+      placeholder: 'cpc, email, banner, article',
+      description: '',
+      value: ''
+    },
+    {
+      id: 3,
+      name: 'Название кампании',
+      utmName: 'utm_campaign',
+      placeholder: 'promo, discount, sale',
+      description: '',
+      value: ''
+    },
+  ],
+  optionalOptions: [
+    {
+      id: 1,
+      name: 'Идентификатор объявления',
+      utmName: 'utm_content',
+      placeholder: 'link, landing page',
+      description: '',
+      value: ''
+    },
+    {
+      id: 2,
+      name: 'Ключевое слово',
+      utmName: 'utm_term',
+      placeholder: 'free, -30%, registration',
+      description: '',
+      value: ''
+    }
+  ],
   preparedValue: [
     {
       id: 1,
@@ -375,7 +268,127 @@ const initialState = {
   ],
   isCopied: false,
   modalContent: {},
-  showModal: false
+  showModal: false,
+  requiredModalText: [
+    {
+      id: 1,
+      modalText: {
+        title: 'utm_source',
+        titleText: 'название рекламной площадки',
+        description: 'Нужен, чтобы указать название источника трафика',
+        examples: {
+          title: 'Примеры:',
+          texts: [
+            {
+              id: 1,
+              text: 'utm_source=google – контекстная реклама в Google Adwords',
+            },
+            {
+              id: 2,
+              text: 'utm_source=yandex — контекстная реклама в Яндекс.Директ',
+            },
+            {
+              id: 3,
+              text: 'utm_source=facebook — контекстная реклама в Facebook',
+            },
+            {
+              id: 4,
+              text: 'utm_source=vk — контекстная реклама в Вконтакте',
+            }
+          ]
+        }
+      }
+    },
+    {
+      id: 2,
+      modalText: {
+        title: 'utm_medium',
+        titleText: 'тип рекламы',
+        description: 'Чтобы определить типа кампании или рекламы',
+        examples: {
+          title: 'Примеры',
+          texts: [
+            {
+              id: 1,
+              text: 'utm_medium=organic – бесплатный переход',
+            },
+            {
+              id: 2,
+              text: 'utm_medium=cpc – контекстная реклама (cost per click, плата за клик)',
+            },
+            {
+              id: 3,
+              text: 'utm_medium=email — рассылка',
+            },
+            {
+              id: 4,
+              text: 'utm_medium=social — социальные сети',
+            },
+            {
+              id: 5,
+              text: 'utm_medium=banner — медийная реклама',
+            },
+            {
+              id: 6,
+              text: 'utm_medium=cpa — другая реклама (cost per action, плата за действие)',
+            }
+          ]
+        }
+      }
+    },
+    {
+      id: 3,
+      modalText: {
+        title: 'utm_campaign',
+        titleText: 'название кампании',
+        description: 'Позволит вам отличить одну рекламную кампанию от другой в статистике',
+        examples: {
+          title: 'Примеры',
+          texts: [
+            {
+              id: 1,
+              text: 'utm_campaign=mebel_dlya_doma – рекламная кампания мебели для дома',
+            }
+          ]
+        }
+      }
+    }
+  ],
+  optionalModalText: [
+    {
+      id: 1,
+      modalText: {
+        title: 'utm_content',
+        titleText: 'дополнительная информация, которую можно отслеживать, если совпадают другие параметры',
+        description: 'Часто используется как пометка для объявления внутри рекламной кампании. Название можно задать произвольно, удобнее всего использовать важные характеристики объявления — подкатегория товара или услуги, тип самого объявления и т. п.',
+        examples: {
+          title: 'Примеры',
+          texts: [
+            {
+              id: 1,
+              text: 'utm_content=zero_block240×60 — баннер 240 на 60 про Zero блок на Тильде',
+            },
+            {
+              id: 2,
+              text: 'utm_content=zero_block_text — текстовое объявление про Zero блок',
+            }
+          ]
+        }
+      }
+    },
+    {
+      id: 2,
+      modalText: {
+        title: 'utm_term',
+        titleText: 'ключевое слово, с которого начался показ объявления',
+        description: 'Позволит вам отличить одну рекламную кампанию от другой в статистике',
+        examples: {
+          title: 'Примеры',
+          texts: []
+        }
+      }
+    }
+  ]
 };
 
 const putValueInOptions = (opts, payload) => {
@@ -428,11 +441,11 @@ const linkHandler = (selectValue, inputValue, reqOpts, optOpts, inputPlaceholder
 };
 
 const putPrepareContent = (options, id) => {
-  return options.data.find(text => text.id === id);
+  return options.find(text => text.id === id);
 };
 
 const reducer = (state = initialState, {type, payload}) => {
-  const {selectValue, inputValue, requiredOptions, optionalOptions, inputPlaceholder} = state;
+  const {selectValue, inputValue, radioInputs, requiredOptions, optionalOptions, preparedValue, inputPlaceholder} = state;
   let link;
 
   switch (type) {
@@ -449,54 +462,42 @@ const reducer = (state = initialState, {type, payload}) => {
       };
 
     case SET_RADIO_INPUTS:
-      const inputs = [...state.radioInputs];
+      const inputs = [...radioInputs];
       inputs.forEach(input => input.checked = false);
 
       const radioInputId = payload;
       const input = inputs.find(input => input.id === radioInputId);
       input.checked = true;
 
-      const opts = state.preparedValue.find(ads => ads.id === input.id);
-      const reqOptsResult = putPrepareValueOptions(opts.requiredOptionsValue, state.requiredOptions.data);
-      const optOptsResult = putPrepareValueOptions(opts.optionalOptionsValue, state.optionalOptions.data);
+      const opts = preparedValue.find(ads => ads.id === input.id);
+      const reqOptsResult = putPrepareValueOptions(opts.requiredOptionsValue, requiredOptions);
+      const optOptsResult = putPrepareValueOptions(opts.optionalOptionsValue, optionalOptions);
 
       return {
         ...state,
         radioInputs: inputs,
-        requiredOptions: {
-          ...state,
-          data: reqOptsResult,
-        },
-        optionalOptions: {
-          ...state,
-          data: optOptsResult
-        },
+        requiredOptions:reqOptsResult,
+        optionalOptions: optOptsResult
       };
 
     case SET_REQUIRED_OPTIONS_INPUT_VALUE:
-      const reqOptions = putValueInOptions(state.requiredOptions.data, payload);
+      const reqOptions = putValueInOptions(requiredOptions, payload);
 
       return {
         ...state,
-        requiredOptions: {
-          ...state,
-          data: reqOptions
-        }
+        requiredOptions: reqOptions
       };
 
     case SET_OPTIONAL_OPTIONS_INPUT_VALUE:
-      const optOptions = putValueInOptions(state.optionalOptions.data, payload);
+      const optOptions = putValueInOptions(optionalOptions, payload);
 
       return {
         ...state,
-        optionalOptions: {
-          ...state,
-          data: optOptions
-        }
+        optionalOptions: optOptions
       };
 
     case SET_RESULT_LINK:
-      link = linkHandler(selectValue, inputValue, requiredOptions.data, optionalOptions.data, inputPlaceholder);
+      link = linkHandler(selectValue, inputValue, requiredOptions, optionalOptions, inputPlaceholder);
 
       return {
         ...state,
@@ -512,13 +513,7 @@ const reducer = (state = initialState, {type, payload}) => {
     case SET_MODAL_CONTENT:
       const [options, id] = payload;
 
-      let content;
-
-      if (options === 'required') {
-        content = putPrepareContent(state.requiredOptions, id);
-      } else {
-        content = putPrepareContent(state.optionalOptions, id);
-      }
+      const content = putPrepareContent(options, id);
 
       return {
         ...state,
