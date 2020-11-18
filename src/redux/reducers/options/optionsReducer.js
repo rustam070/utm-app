@@ -61,7 +61,7 @@ const reducer = (state = initialState, {type, payload}) => {
   switch (type) {
     case SET_REQUIRED_OPTIONS_INPUT_VALUE:
       const reqOptions = putValueInOptions(payload);
-      console.log(payload);
+
       return {
         ...state,
         requiredOptions: reqOptions
