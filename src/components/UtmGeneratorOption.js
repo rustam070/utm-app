@@ -30,7 +30,7 @@ export const UtmGeneratorOption = props => {
           <div>
             <Button
               onClick={() => {
-                showModalHandler()
+                showModalHandler();
               }}
               text='?'
             />

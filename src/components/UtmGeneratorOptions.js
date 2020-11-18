@@ -1,32 +1,41 @@
 import React from 'react';
+import data from '../data.json';
 import {useDispatch, useSelector} from 'react-redux';
 import {Portal} from '../Portal';
 import {UtmGeneratorOption} from './UtmGeneratorOption';
 import {Modal} from './UI/Modal';
-import {
-  setModalContent,
-  setOptionalOptionsInputValue,
-  setRequiredOptionsInputValue,
-  setResultLink,
-  setShowModal
-} from '../redux/actionCreators';
+import {setOptionalOptionsInputValue, setRequiredOptionsInputValue} from '../redux/reducers/options/actionsCreators';
+import {setModalContent, setShowModal} from '../redux/reducers/modal/actionCreators';
+import {setResultLink} from '../redux/reducers/result/actionCreators';
 import '../styles/componentsStyles/utm-generator-options.scss';
 
 export const UtmGeneratorOptions = () => {
+  const {requiredModalText, optionalModalText} = data;
   const dispatch = useDispatch();
 
-  const {requiredOptions, optionalOptions, modalContent, showModal, requiredModalText, optionalModalText} = useSelector(state => state);
+  const selectOptions = state => state.optionsReducer;
+  const {requiredOptions, optionalOptions} = useSelector(selectOptions);
+
+  const selectModal = state => state.modalReducer;
+  const {modalContent, showModal} = useSelector(selectModal);
+
+  const selectSiteInput = state => state.siteInputReducer;
+  const {selectValue, inputValue, inputPlaceholder} = useSelector(selectSiteInput);
 
   const onChangeInputRequiredOptions = (id, event) => {
     const {value} = event.target;
-    dispatch(setRequiredOptionsInputValue([id, value]));
-    dispatch(setResultLink());
+    dispatch(setRequiredOptionsInputValue([requiredOptions, id, value]));
+
+    const resultPayload = [selectValue, inputValue, requiredOptions, optionalOptions, inputPlaceholder];
+    dispatch(setResultLink(resultPayload));
   };
 
   const onChangeInputOptionalOptions = (id, event) => {
     const {value} = event.target;
-    dispatch(setOptionalOptionsInputValue([id, value]));
-    dispatch(setResultLink());
+    dispatch(setOptionalOptionsInputValue([optionalOptions, id, value]));
+
+    const resultPayload = [selectValue, inputValue, requiredOptions, optionalOptions, inputPlaceholder];
+    dispatch(setResultLink(resultPayload));
   };
 
   const showModalHandler = (boolean, options = '', id = '') => {

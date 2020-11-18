@@ -1,11 +1,9 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import data from '../data.json';
 import '../styles/componentsStyles/description.scss';
 
 export const Description = () => {
-  const {description:
-      {descriptionTitle, descriptionList}
-  } = useSelector(state => state);
+  const {descriptionTitle, descriptionList} = data.description;
 
   return (
     <section className='description'>

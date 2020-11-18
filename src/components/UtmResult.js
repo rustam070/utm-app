@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {useDispatch, useSelector} from 'react-redux';
+import {setCopyLink} from '../redux/reducers/result/actionCreators';
 import {Input} from './UI/Inputs/Input';
-import {setCopyLink} from '../redux/actionCreators';
 import '../styles/componentsStyles/utm-result.scss';
 
 export const UtmResult = () => {
   const dispatch = useDispatch();
 
-  const {resultLink, isCopied} = useSelector(state => state);
+  const selectResult = state => state.resultReducer;
+  const {resultLink, isCopied} = useSelector(selectResult);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
