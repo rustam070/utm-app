@@ -13,8 +13,8 @@ export const Select = props => {
       {select.map(({id, text}) => {
         return (
           <option key={id} value={text}>{text}</option>
-        )
+        );
       })}
     </select>
-  )
-}
+  );
+};

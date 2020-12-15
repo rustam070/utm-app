@@ -1,17 +1,11 @@
 @import '../commonStyles/variables';
 @import '../commonStyles/mixins';
 
-.description__texts {
+.generator__block {
   @include background-content-style;
 
   & h3 {
     font-size: $font-size-big;
     font-weight: $font-weight-normal;
-  }
-}
-
-.description__list {
-  & li {
-    margin-top: 4px * $uiPoint;
   }
 }

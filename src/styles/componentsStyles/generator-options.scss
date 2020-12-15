@@ -1,0 +1,53 @@
+@import '../commonStyles/mixins';
+@import '../commonStyles/variables';
+
+.generator__options {
+  @include d-flex-space-between;
+  margin-top: 10px * $uiPoint;
+}
+
+.generator__option_block {
+  width: 100%;
+
+  & h3 {
+    margin-bottom: 3px * $uiPoint;
+    font-weight: $font-weight-normal;
+  }
+}
+
+.generator__option {
+  margin-top: 4px & $uiPoint;
+
+  & .generator__option_title {
+    font-weight: $font-weight-normal;
+    margin-bottom: 1px * $uiPoint;
+  }
+
+  & .generator__option_description {
+    font-size: $font-size-small;
+    margin-bottom: 1px * $uiPoint;
+    color: $color-hard-grey;
+  }
+}
+
+.generator__option_item {
+  @include d-flex-center-space-between;
+}
+
+.generator__option_button {
+  @include d-flex-center;
+  background: $color-light-grey;
+  width: $btn-generator-width;
+  height: 7px * $uiPoint;
+  border: 1px solid #ccc;
+  border-radius: (1px * $uiPoint) 0 0 (1px * $uiPoint);
+
+  & p {
+    margin-left: 1px * $uiPoint;
+  }
+
+  & div {
+    margin-left: auto;
+    padding-right: 1px * $uiPoint;
+  }
+}

@@ -1,78 +1,61 @@
-import {SET_OPTIONAL_OPTIONS_INPUT_VALUE, SET_REQUIRED_OPTIONS_INPUT_VALUE} from '../../actionsTypes';
+import {SET_OPTIONS_INPUT_VALUE} from '../../actionsTypes';
+import {locales} from '../../../locales';
+
+const {
+  generator: {options: {items}}
+} = locales;
 
 const initialState = {
-  requiredOptions: [
+  options: [
     {
       id: 1,
-      name: 'Источник кампании',
-      utmName: 'utm_source',
-      placeholder: 'google, yandex, vk, facebook',
+      title: items[0].title,
+      name: items[0].name,
+      placeholder: items[0].placeholder,
       description: '',
       value: ''
     },
     {
       id: 2,
-      name: 'Тип трафика',
-      utmName: 'utm_medium',
-      placeholder: 'cpc, email, banner, article',
+      title: items[1].title,
+      name: items[1].name,
+      placeholder: items[1].placeholder,
       description: '',
       value: ''
     },
     {
       id: 3,
-      name: 'Название кампании',
-      utmName: 'utm_campaign',
-      placeholder: 'promo, discount, sale',
-      description: '',
-      value: ''
-    },
-  ],
-  optionalOptions: [
-    {
-      id: 1,
-      name: 'Идентификатор объявления',
-      utmName: 'utm_content',
-      placeholder: 'link, landing page',
+      title: items[2].title,
+      name: items[2].name,
+      placeholder: items[2].placeholder,
       description: '',
       value: ''
     },
     {
-      id: 2,
-      name: 'Ключевое слово',
-      utmName: 'utm_term',
-      placeholder: 'free, -30%, registration',
+      id: 4,
+      title: items[3].title,
+      name: items[3].name,
+      placeholder: items[3].placeholder,
+      description: '',
+      value: ''
+    },
+    {
+      id: 5,
+      title: items[4].title,
+      name: items[4].name,
+      placeholder: items[4].placeholder,
       description: '',
       value: ''
     }
   ],
 };
 
-const putValueInOptions = payload => {
-  const [opts, id, value] = payload;
-  const options = [...opts];
-
-  const option = options.find(option => option.id === id);
-  option.value = value;
-
-  return options;
-};
-
 const reducer = (state = initialState, {type, payload}) => {
   switch (type) {
-    case SET_REQUIRED_OPTIONS_INPUT_VALUE:
-      const reqOptions = putValueInOptions(payload);
-
+    case SET_OPTIONS_INPUT_VALUE:
       return {
         ...state,
-        requiredOptions: reqOptions
-      };
-
-    case SET_OPTIONAL_OPTIONS_INPUT_VALUE:
-      const optOptions = putValueInOptions(payload);
-
-      return {
-        ...state,
-        optionalOptions: optOptions
+        options: payload
       };
     default:
       return state;

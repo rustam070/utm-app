@@ -5,12 +5,10 @@ import optionsReducer from './reducers/options/optionsReducer';
 import modalReducer from './reducers/modal/modalReducer';
 import resultReducer from './reducers/result/resultReducer';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   siteInputReducer,
   radioInputsReducer,
   optionsReducer,
   modalReducer,
   resultReducer
 });
-
-export default rootReducer;

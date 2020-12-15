@@ -1,13 +1,20 @@
 import {SET_SELECT_VALUE, SET_SITE_INPUT_VALUE} from '../../actionsTypes';
+import {locales} from '../../../locales';
+
+const {generator} = locales;
+const {
+  siteSelect: {placeholder: selectPlaceholder, value: selectValue},
+  siteInput: {placeholder, value}
+} = generator;
 
 const initialState = {
   select: [
-    {id: 1, text: 'http://'},
-    {id: 2, text: 'https://'}
+    {id: 1, text: selectPlaceholder[0].text},
+    {id: 2, text: selectPlaceholder[1].text}
   ],
-  selectValue: 'http://',
-  inputPlaceholder: 'yoursite.com',
-  inputValue: '',
+  selectValue: selectValue,
+  inputPlaceholder: placeholder,
+  inputValue: value,
 };
 
 const siteInputReducer = (state = initialState, {type, payload}) => {

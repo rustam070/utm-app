@@ -1,0 +1,17 @@
+@import '../commonStyles/variables';
+@import '../commonStyles/mixins';
+
+.traffic__radio {
+  & h3 {
+    margin-top: 6px * $uiPoint;
+  }
+}
+
+.traffic__source {
+  display: flex;
+}
+
+.traffic__source_input {
+  @include d-flex-center-center;
+  margin: (2px * $uiPoint) (4px * $uiPoint) 0 0;
+}

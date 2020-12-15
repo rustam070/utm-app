@@ -1,12 +1,12 @@
 import React from 'react';
-import '../../styles/componentsStyles/options-button.scss';
+import '../../styles/componentsStyles/button.scss';
 
 export const Button = props => {
   const {text = 'Кнопка', onClick} = props;
   return (
     <button
       onClick={onClick}
-      className='options__button'
+      className='button'
     >
       {text}
     </button>

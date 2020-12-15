@@ -1,8 +1,8 @@
 import React from 'react';
 import {Header} from './components/Header';
 import {Description} from './components/Description';
-import {UtmGenerator} from './components/UtmGenerator';
-import {UtmResult} from './components/UtmResult';
+import {Generator} from './components/Generator/Generator';
+import {Result} from './components/Result/Result';
 import {Footer} from './components/Footer';
 import './styles/componentsStyles/app.scss';
 
@@ -10,8 +10,8 @@ export const App = () => (
   <div className='app'>
     <Header/>
     <Description/>
-    <UtmGenerator/>
-    <UtmResult/>
+    <Generator/>
+    <Result/>
     <Footer/>
   </div>
 );

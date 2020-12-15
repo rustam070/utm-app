@@ -4,11 +4,8 @@
   text-align: center;
 
   & h3 {
-    font-size: 28px;
-    margin: 50px 0 10px;
-  }
-
-  & p {
-    font-size: $font-size-title;
+    font-size: $font-size-biggest;
+    margin-top: 10px * $uiPoint;
+    margin-bottom: 2px * $uiPoint;
   }
 }

@@ -15,7 +15,7 @@ export const RadioInput = props => {
         onChange={onChange}
         checked={checked}
       />
-      <span className='radio__button' />
+      <span className='radio__button'/>
       <span className='radio__button_text'>
         {labelText}
       </span>

@@ -1,14 +1,15 @@
 @import '../commonStyles/variables';
 
 .select {
-  height: 37px;
-  width: 100px;
+  font-family: $font-family-main;
+  width: $select-width;
+  height: $select-height;
+  background: $color-orange;
   border: none;
-  background: $orange-color;
-  font-size: 16px;
-  padding-left: 5px;
-  color: #fff;
+  font-size: $font-size-normal;
+  padding-left: 1px * $uiPoint;
+  color: $color-white;
   outline: none;
-  border-radius: 5px 0 0 5px;
+  border-radius: (1px * $uiPoint) 0 0 (1px * $uiPoint);
   cursor: pointer;
 }

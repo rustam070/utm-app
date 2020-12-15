@@ -1,0 +1,13 @@
+@import '../commonStyles/variables';
+
+.button {
+  background: $color-hard-grey;
+  color: $color-white;
+  font-family: $font-family-main;
+  width: 4px * $uiPoint;
+  height: 4px * $uiPoint;
+  border-radius: 1px * $uiPoint;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

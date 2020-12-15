@@ -1,0 +1,41 @@
+@import '../commonStyles/mixins';
+@import '../commonStyles/variables';
+
+.result_block {
+  @include background-content-style;
+  position: relative;
+
+  & h3 {
+    margin-bottom: 3px * $uiPoint;
+    font-size: $font-size-big;
+    font-weight: $font-weight-normal;
+  }
+
+  & > div {
+    @include d-flex-center;
+  }
+
+  & span {
+    color: $color-hard-grey;
+    font-size: $font-size-small;
+    position: absolute;
+    left: 9px * $uiPoint;
+    bottom: 3px * $uiPoint;
+  }
+}
+
+.result_copy {
+  text-align: center;
+
+  & p {
+    background: $color-orange;
+    font-family: $font-family-main;
+    color: $color-white;
+    width: $result-button-width;
+    padding: ((1px * $uiPoint) + 2) 0;
+    border-radius: (1px * $uiPoint) 0 0 (1px * $uiPoint);
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}

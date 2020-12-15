@@ -1,4 +1,36 @@
-$font-size-title: 20px;
-$light-grey-color: #f3f3f3;
-$grey-color: #5c5c5c;
-$orange-color: #EF643E;
+// start point
+$uiPoint: 5;
+
+// font-size
+$font-size-small: 12px;
+$font-size-normal: 14px;
+$font-size-big: 20px;
+$font-size-biggest: 28px;
+
+// colors
+$color-white: #fff;
+$color-light-grey: #f3f3f3;
+$color-normal-grey: #ccc;
+$color-hard-grey: #5c5c5c;
+$color-orange: #EF643E;
+$modal-background-color: rgba(0, 0, 0, .5);
+
+// font-weight
+$font-weight-normal: 500;
+
+// font-family
+$font-family-main: 'Montserrat', sans-serif;
+
+// components styles
+$btn-generator-width: 250px;
+$modal-width: 700px;
+$radio-button-width: 15px;
+$radio-button-height: 15px;
+$radio-button-before-width: 9px;
+$radio-button-before-height: 9px;
+$result-button-width: 150px;
+$select-width: 100px;
+$select-height: 37px;
+
+// box-shadow
+$background-content-shadow: 0 0 5px rgba(0, 0, 0, .1);

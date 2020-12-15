@@ -4,13 +4,13 @@
   text-align: center;
 
   & h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: $font-size-biggest;
+    margin-bottom: 2px * $uiPoint;
   }
 
   & h2 {
-    font-size: $font-size-title;
-    font-weight: normal;
-    margin-bottom: 20px;
+    font-size: $font-size-big;
+    font-weight: $font-weight-normal;
+    margin-bottom: 4px * $uiPoint;
   }
 }

@@ -1,66 +1,67 @@
+@import '../commonStyles/variables';
 @import '../commonStyles/mixins';
 
 .modal__backdrop {
   @include d-flex-center-center;
-  background: rgba(0, 0, 0, .5);
+  background: $modal-background-color;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .modal {
   background: #fff;
-  width: 700px;
-  padding: 30px 0 50px;
-  border-radius: 5px;
+  width: $modal-width;
+  padding: (6px * $uiPoint) 0 (10px * $uiPoint);
+  border-radius: 1px * $uiPoint;
   position: relative;
 }
 
 .modal__close_btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 2px * $uiPoint;
+  right: 2px * $uiPoint;
 }
 
 .modal__title {
   display: flex;
-  padding: 30px 40px 0;
+  padding: (6px * $uiPoint) (8px * $uiPoint) 0;
 
   & h3 {
-    font-size: 20px;
+    font-size: $font-size-big;
   }
 
   & p {
-    font-size: 20px;
+    font-size: $font-size-big;
   }
 }
 
 .modal__description {
   @include d-flex-center;
-  padding: 20px 40px;
+  padding: (4px * $uiPoint) (8px * $uiPoint);
 
   & span {
-    font-weight: 500;
+    font-weight: $font-weight-normal;
   }
 
   & p {
-    margin-left: 5px;
+    margin-left: 1px * $uiPoint;
   }
 }
 
 .modal__example {
-  padding: 0 40px;
+  padding: 0 (8px * $uiPoint);
 
   & p {
-    font-weight: 500;
+    font-weight: $font-weight-normal;
   }
 }
 
 .modal__list {
   & li {
-    margin-top: 10px;
+    margin-top: 2px * $uiPoint;
   }
 }

@@ -1,18 +1,18 @@
 import React from 'react';
-import data from '../data.json';
+import {locales} from '../locales';
 import '../styles/componentsStyles/description.scss';
 
 export const Description = () => {
-  const {descriptionTitle, descriptionList} = data.description;
+  const {description: {title, list}} = locales;
 
   return (
     <section className='description'>
       <div className='description__texts'>
         <h3>
-          {descriptionTitle}
+          {title}
         </h3>
         <ul className='description__list'>
-          {descriptionList.map(({id, text}) => {
+          {list.map(({id, text}) => {
             return (
               <li key={id}>
                 {text}

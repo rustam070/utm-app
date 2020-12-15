@@ -1,0 +1,7 @@
+@import '../commonStyles/variables';
+@import '../commonStyles/mixins';
+
+.site__address_link {
+  @include d-flex-center-center;
+  margin-top: 4px * $uiPoint;
+}

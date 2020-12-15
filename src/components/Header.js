@@ -1,15 +1,20 @@
 import React from 'react';
+import {locales} from '../locales';
 import '../styles/componentsStyles/header.scss';
 
 export const Header = () => {
+  const {
+    header: {title, subtitle}
+  } = locales;
+
   return (
     <header className='header'>
       <div className='header__texts'>
         <h1>
-          Генератор UTM-меток
+          {title}
         </h1>
         <h2>
-          Создайте ссылку для своей рекламной кампании
+          {subtitle}
         </h2>
       </div>
     </header>

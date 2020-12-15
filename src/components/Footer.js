@@ -1,16 +1,16 @@
 import React from 'react';
+import {locales} from '../locales';
 import '../styles/componentsStyles/footer.scss';
 
 export const Footer = () => {
+  const {footer: {title}} = locales;
+
   return (
     <footer className='footer'>
       <div className='footer__texts'>
         <h3>
-          Генератор UTM-меток
+          {title}
         </h3>
-        <p>
-          Создайте ссылку для своей рекламной кампании
-        </p>
       </div>
     </footer>
   );

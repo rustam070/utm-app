@@ -1,13 +1,15 @@
+@import './commonStyles/variables';
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  line-height: 1.5rem;
-  color: #313131;
+  font-family: $font-family-main;
+  font-size: $font-size-normal;
+  line-height: $uiPoint - 3.5rem;
+  color: $color-hard-grey;
 }
 
 li {

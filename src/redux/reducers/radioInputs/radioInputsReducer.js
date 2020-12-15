@@ -1,71 +1,51 @@
-import {SET_RADIO_INPUTS,} from '../../actionsTypes';
+import {SET_OPTIONS_RESULT, SET_RADIO_INPUTS} from '../../actionsTypes';
+import {locales} from '../../../locales';
+
+const {generator: {radioInputs}} = locales;
 
 const initialState = {
   radioInputs: [
     {
       id: 1,
-      labelText: 'Свои значения',
+      labelText: radioInputs[0].text,
       checked: true
     },
     {
       id: 2,
-      labelText: 'Google Adwords',
+      labelText: radioInputs[1].text,
       checked: false
     },
     {
       id: 3,
-      labelText: 'Яндекс.Директ',
+      labelText: radioInputs[2].text,
       checked: false
     },
     {
       id: 4,
-      labelText: 'Вконтакте',
+      labelText: radioInputs[3].text,
       checked: false
     },
     {
       id: 5,
-      labelText: 'Facebook',
+      labelText: radioInputs[4].text,
       checked: false
     },
-  ]
-};
-
-const putPreparedValueOptions = (ads, opts) => {
-  const options = [...opts];
-
-  options.forEach(option => {
-    ads.forEach(value => {
-      if (option.id === value.id) {
-        option.value = value.text;
-        option.description = value.description;
-      }
-    });
-  });
-
-  return options;
+  ],
+  optionsResult: {}
 };
 
 const radioInputsReducer = (state = initialState, {type, payload}) => {
   switch (type) {
-    case SET_RADIO_INPUTS:
-      const [requiredOptions, optionalOptions, preparedOptions, id] = payload;
-
-      const inputs = [...state.radioInputs];
-      inputs.forEach(input => input.checked = false);
-
-      const input = inputs.find(input => input.id === id);
-      input.checked = true;
-
-      const opts = preparedOptions.find(ads => ads.id === input.id);
-      const reqOptsResult = putPreparedValueOptions(opts.requiredOptionsValue, requiredOptions);
-      const optOptsResult = putPreparedValueOptions(opts.optionalOptionsValue, optionalOptions);
-
+        case SET_RADIO_INPUTS:
       return {
         ...state,
-        radioInputs: inputs,
-        requiredOptions: reqOptsResult,
-        optionalOptions: optOptsResult
+        radioInputs: payload,
       };
+    case SET_OPTIONS_RESULT:
+      return {
+        ...state,
+        optionsResult: payload
+      }
     default:
       return state;
   }
